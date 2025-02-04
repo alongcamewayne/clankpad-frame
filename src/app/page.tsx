@@ -1,7 +1,9 @@
-export default function Home() {
+import { TokenForm } from '@/components/TokenForm';
+
+export default async function Home() {
 	return (
 		<div>
-			<h1>Home</h1>
+			<TokenForm />
 		</div>
 	);
 }
