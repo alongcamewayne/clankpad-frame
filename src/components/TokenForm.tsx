@@ -89,14 +89,12 @@ export function TokenForm() {
 
 		toast.success(`$${formData.tokenSymbol} created! Redirecting to the token page...`);
 		await new Promise((resolve) => setTimeout(resolve, 2500));
-		router.push(`https://clank.fun/t/${data.tokenAddress}`);
+		router.push(`/tokens/${data.tokenAddress}`);
 	}
 
 	return (
 		<Form {...form}>
-			<form
-				onSubmit={form.handleSubmit(onSubmit)}
-				className="mx-auto flex max-w-lg flex-col gap-4 p-5">
+			<form onSubmit={form.handleSubmit(onSubmit)} className="mx-auto flex max-w-lg flex-col gap-4">
 				<FormField
 					control={form.control}
 					name="tokenName"

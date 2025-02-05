@@ -1,8 +1,14 @@
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import { getAddress } from 'viem';
 
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
+}
+
+export function truncateAddress(address: string) {
+	address = getAddress(address);
+	return `${address.slice(0, 5)}...${address.slice(-4)}`;
 }
 
 export function formatSlug(slug: string) {
