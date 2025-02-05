@@ -1,8 +1,9 @@
 import { Metadata } from 'next';
 import type { FrameEmbed } from '@/lib/types';
 import { TokenForm } from '@/components/TokenForm';
+import { getBaseUrl } from '@/lib/utils';
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+const baseUrl = getBaseUrl();
 
 const frameData: FrameEmbed = {
 	version: 'next',
